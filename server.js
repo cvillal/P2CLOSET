@@ -4,6 +4,8 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
+const Closet = require('./models/schema.js')
+const closetSeed = require('./models/starterPack.js')
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
@@ -47,6 +49,30 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 // Routes
 //___________________
+
+// seeding to database
+   
+    // Closet.create(closetSeed, (err, data)=> {
+    //     if(err){
+    //         console.log(err)
+    //     }else{
+    //         console.log(data)
+    //     }
+        
+
+//index route
+
+app.get('/closet', (req, res)=>{
+    Closet.find({}, (error, allOutfits)=>{
+        res.render(
+            'index.ejs',
+            {
+                closet: allOutfits
+            }
+        )
+    })
+})
+
 //localhost:3000
 app.get('/' , (req, res) => {
   res.send('Hello World!');
@@ -56,3 +82,6 @@ app.get('/' , (req, res) => {
 //Listener
 //___________________
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));
+
+
+

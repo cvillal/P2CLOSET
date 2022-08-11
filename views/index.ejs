@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="" async defer></script>
+        <title></title>
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+       <h1>My Closet!</h1>
+       <input type="submit" value="Add More to My Closet"/>
+       <ul>
+        <% for(let i=0; i< closet.length; i++){ %>
+            <li>
+                <a href="/closet/<%=closet[i].id%>">
+                    <%= closet[i].image%>
+                </a>
+            </li>
+
+        <% } %>
+       </ul>
+        
+       
+    </body>
+</html>
