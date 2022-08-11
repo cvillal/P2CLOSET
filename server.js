@@ -62,7 +62,7 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 //index route
 
-app.get('/', (req, res)=>{
+app.get('/closet', (req, res)=>{
     Closet.find({}, (error, allOutfits)=>{
         res.render(
             'index.ejs',
@@ -74,9 +74,10 @@ app.get('/', (req, res)=>{
 })
 
 // localhost:3000
-// app.get('/' , (req, res) => {
-//   res.send('Hello World!');
-// });
+//welcome page Button
+app.get('/' , (req, res) => {
+  res.render('test.ejs');
+});
 
 //___________________
 //Listener
