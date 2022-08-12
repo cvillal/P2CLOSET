@@ -121,9 +121,9 @@ app.get('/closet', (req, res)=>{
 
 // localhost:3000
 //welcome page Button
-// app.get('/' , (req, res) => {
-//   res.render('test.ejs');
-// });
+app.get('/' , (req, res) => {
+  res.render('test.ejs');
+});
 
 //___________________
 //Listener
