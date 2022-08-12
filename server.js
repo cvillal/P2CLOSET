@@ -86,7 +86,19 @@ app.get('/closet/:id/edit', (req, res)=>{
     })
 })
     
+//search
 
+
+app.get('/closet/search', (req, res)=>{
+    Closet.find(req.params.id, (err, findOutfit)=>{
+        res.render(
+            'search.ejs',
+            {
+                closet: findOutfit
+            }
+        ) 
+    })
+})
 
 //new route with post
 
