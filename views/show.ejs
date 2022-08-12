@@ -13,7 +13,7 @@
         <h1>Today's Selected Outfit</h1>
         <div class="container">
             <nav>
-                <a href="/closet"><button class="btn btn-outline-primary">back</button></a>
+                <a href="/closet"><button class="btn btn-outline-primary">Back To My Closet</button></a>
             </nav>
 
             <a href="/closet/<%=closet._id%>">
@@ -24,7 +24,11 @@
         </div>
             
         </ul>
-       
+        <nav>
+            <a href="/closet/<%= closet._id%>/edit">
+                <button class="btn btn-outline-warning">Edit your Outfit Here</button>
+            </a>
+        </nav>
         
     </body>
 </html>
