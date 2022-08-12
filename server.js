@@ -59,6 +59,14 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
     //         console.log(data)
     //     }
     
+//delete
+app.delete('/closet/:id', (req, res) => {
+    Closet.findByIdAndRemove(req.params.id, (err, data) => {
+        res.redirect('/closet')
+    })
+})
+
+
 //edit rout with put
 
 app.put('/closet/:id', (req, res)=> {
