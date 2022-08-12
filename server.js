@@ -59,6 +59,20 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
     //         console.log(data)
     //     }
         
+//new route with post
+
+app.get('/closet/new', (req, res)=>{
+    res.render('new.ejs');
+})
+
+app.post('/closet', (req, res)=>{
+    Closet.create(req.body, (err, createdOutfit)=>{
+        res.redirect('/closet')
+    })
+})
+
+
+
 //show route
 app.get('/closet/:id', (req, res) =>{
     Closet.findById(req.params.id, (err, foundOutfit)=>{

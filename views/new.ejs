@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="" async defer></script>
+        <title></title>
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    </head>
+    <body class="mx-auto" style="width: 200px;">
+      <h1>Add Supplies to your Backpack!</h1>
+      <nav>
+        <a href="/closet"><button class="btn btn-outline-primary">back</button></a>
+    </nav>
+
+     <form action="/closet" method="POST">
+        Image:<input type="url" name="image" placeholder="image" /> <br/>
+        Type:<input type="text" name="type" placeholder="type" /> <br/>
+        Season:<input type="text" name="season" placeholder="season" /> <br/>
+        Feels:<input type="number" name="feels" placeholder="feels rating"/> <br/>
+        Tags: <input type="text" name="tags" placeholder="tags" /> <br/>
+        <input type="submit" value="Put in My Closet" class="btn btn-outline-success"/>
+     </form>
+        
+       
+    </body>
+</html>
