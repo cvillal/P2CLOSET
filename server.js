@@ -88,9 +88,12 @@ app.get('/closet/:id/edit', (req, res)=>{
     
 //search
 
+// url route to search ejs
+//closet.find( passing property i am seraching(req.body?) and (value user submits [String]?) (err, foundOutfit))
+//res.render('foundOutfit')
 
 app.get('/closet/search', (req, res)=>{
-    Closet.find({tags:[String]}, (String), (err, findOutfit)=>{
+    Closet.find({tags:[String]}, (err, findOutfit)=>{
         res.render(
             'search.ejs',
             {
