@@ -90,7 +90,7 @@ app.get('/closet/:id/edit', (req, res)=>{
 
 
 app.get('/closet/search', (req, res)=>{
-    Closet.find(req.params.id, (err, findOutfit)=>{
+    Closet.find({tags:[String]}, (String), (err, findOutfit)=>{
         res.render(
             'search.ejs',
             {
