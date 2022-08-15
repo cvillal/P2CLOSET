@@ -92,8 +92,16 @@ app.get('/closet/:id/edit', (req, res)=>{
 //closet.find( passing property i am seraching(req.body?) and (value user submits [String]?) (err, foundOutfit))
 //res.render('foundOutfit')
 
-app.get('/closet/search', (req, res)=>{
-    Closet.find({tags:[String]}, (err, findOutfit)=>{
+app.get('/closet/search/:tags', (req, res)=>{
+    const tags = req.params.tags;
+    Closet.find(req.params.tags, {tags:tags},(err, findOutfit)=>{
+        if(err){
+            res.render(
+                'search.ejs',
+                {
+                    tags: null,
+                })
+        } console.log("tag not found - try again");
         res.render(
             'search.ejs',
             {
@@ -102,6 +110,7 @@ app.get('/closet/search', (req, res)=>{
         ) 
     })
 })
+  
 
 //new route with post
 

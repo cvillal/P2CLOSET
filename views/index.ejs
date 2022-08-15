@@ -11,30 +11,35 @@
         <link rel="stylesheet" href="">
     </head>
     <body class="mx-auto" style="width: 200px;">
-       <h1>My Closet!</h1>
+      <div class="container-lg">
+        <h1>My Closet!</h1>
 
        <input type="text" placeholder="search for outfit">
        
        <nav>
         <a href="/closet/new"><button class="btn btn-outline-success">Add More Outfits To My Closet</button></a>
         </nav>
+       </div>
        <ul>
         <% for(let i=0; i< closet.length; i++){ %>
+            <div class="card" style="width: 10rem;">
             <li>
                 <a href="/closet/<%=closet[i]._id%>">
-                    <img src="<%=closet[i].image%>" height="200">
+                    <img src="<%=closet[i].image%>" height="200" class="card-img-top">
                 </a>
             </li>
             <nav>
-                <a href="/closet/<%=closet[i]._id%>/edit">
-                    <button class="btn btn-outline-warning">Edit your Outfit Here</button>
+                <a href="/closet/<%=closet[i]._id%>/edit" class=""btn btn-primary>
+                    <button class="btn btn-outline-warning btn-sm">Edit your Outfit Here</button>
                 </a>
             </nav>
             <form action="/closet/<%= closet[i]._id%>?_method=DELETE" method="POST">
-                <input type="submit" value="DELETE"class="btn btn-outline-danger"/>
+                <input type="submit" value="DELETE"class="btn btn-outline-danger btn-sm"/>
             </form>
         <% } %>
-       </ul>
+    </div>
+    </ul>
+       
      
        
     </body>
