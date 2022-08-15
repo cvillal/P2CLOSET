@@ -1,0 +1,18 @@
+h1{
+    border: 2px solid black;
+    text-align: center;
+    margin: 20%;
+}
+.card{
+   border: 5px solid red;
+}
+#addMore{
+   margin: 2%;
+   margin-left: 20%;
+}
+
+.container-lg{
+    border: 2px solid red;
+    padding: 20%;
+    margin:5%;
+}
