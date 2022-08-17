@@ -4,17 +4,18 @@
         <%- include ('./partials/head.ejs') %>
     </head>
     <body class="mx-auto" style="width: 200px;">
-      <h1>Add a New Outfit to your Closet!</h1>
+      <h1>Here are the Outfits that match that Tag!</h1>
       <nav>
         <a href="/closet"><button class="btn btn-outline-primary">Back to My Closet</button></a>
     </nav>
 
      <form action="/closet" method="GET">
         <input type="text" value="search" placeholder="search for outfit">
-       
+         
         <button class="btn btn-outline-success">search</button>
+      
      </form>
-        
+        <p> <%= closet[0].tags%></p>
        
     </body>
 </html>

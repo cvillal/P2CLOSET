@@ -93,22 +93,27 @@ app.get('/closet/:id/edit', (req, res)=>{
 //res.render('foundOutfit')
 
 app.get('/closet/search/:tags', (req, res)=>{
-    const tags = req.params.tags;
-    Closet.find(req.params.tags, {tags:tags},(err, findOutfit)=>{
+    // const tags = req.params.tags;
+    Closet.find({tags: req.params.tags},(err, findOutfit)=>{
         if(err){
             res.render(
                 'search.ejs',
                 {
                     tags: null,
                 })
-        } console.log("tag not found - try again");
+        console.log("tag not found - try again");
+
+        } else {
+            console.log(findOutfit)
         res.render(
             'search.ejs',
             {
                 closet: findOutfit
             }
-        ) 
+        )
+        }
     })
+
 })
   
 

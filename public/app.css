@@ -16,3 +16,19 @@ h1{
     padding: 20%;
     margin:5%;
 }
+li{
+    list-style: none;
+    text-align: center;
+}
+
+#edit {
+    display: inline-block;
+}
+#bottomButtons{
+    display:inline-flex;
+    margin: 2%;
+    padding: 2%;
+}
+#card{
+    border: 2px solid black;
+}
