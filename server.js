@@ -4,7 +4,8 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
-const Closet = require('./models/schema.js')
+const Closet = require('./models/schema.js');
+const { keys } = require('./models/starterPack.js');
 const closetSeed = require('./models/starterPack.js')
 const app = express ();
 const db = mongoose.connection;
@@ -70,7 +71,13 @@ app.delete('/closet/:id', (req, res) => {
 //edit rout with put
 
 app.put('/closet/:id', (req, res)=> {
-    Closet.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updateCloset)=>{
+    Closet.findByIdAndUpdate(req.params.id, {
+        image: req.body.image,
+        type: req.body.type,
+        season: req.body.season,
+        feels: req.body.feels,
+        tags: req.body.tags.split(',')
+    }, {new:true}, (err, updateCloset)=>{
         res.redirect('/closet');
     })
 })
@@ -95,25 +102,13 @@ app.get('/closet/:id/edit', (req, res)=>{
 app.get('/closet/search/:tags', (req, res)=>{
     // const tags = req.params.tags;
     Closet.find({tags: req.params.tags},(err, findOutfit)=>{
-        if(err){
-            res.render(
-                'index.ejs',
-                {
-                    tags: null,
-                })
-        console.log("tag not found - try again");
-
-        } else {
-            console.log(findOutfit)
         res.render(
             'index.ejs',
             {
                 closet: findOutfit
             }
         )
-        }
-    })
-
+        })
 })
   
 
@@ -124,7 +119,13 @@ app.get('/closet/new', (req, res)=>{
 })
 
 app.post('/closet', (req, res)=>{
-    Closet.create(req.body, (err, createdOutfit)=>{
+    Closet.create({
+        image: req.body.image,
+        type: req.body.type,
+        season: req.body.season,
+        feels: req.body.feels,
+        tags: req.body.tags.split(',')
+    }, (err, createdOutfit)=>{
         res.redirect('/closet')
     })
 })
