@@ -97,7 +97,7 @@ app.get('/closet/search/:tags', (req, res)=>{
     Closet.find({tags: req.params.tags},(err, findOutfit)=>{
         if(err){
             res.render(
-                'search.ejs',
+                'index.ejs',
                 {
                     tags: null,
                 })
@@ -106,7 +106,7 @@ app.get('/closet/search/:tags', (req, res)=>{
         } else {
             console.log(findOutfit)
         res.render(
-            'search.ejs',
+            'index.ejs',
             {
                 closet: findOutfit
             }
