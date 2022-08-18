@@ -13,7 +13,7 @@
         <a href="/closet/<%=closet._id%>">
             <img src="<%=closet.image%>" height="200">
         </a>
-
+<div class="font">
         <form action="/closet/<%=closet._id%>?_method=PUT" method="POST">
             Image:<input type="url" name="image" value="<%=closet.image%>"/> <br/>
             Type:<input type="text" name="type" value="<%=closet.type%>" /> <br/>
@@ -24,6 +24,6 @@
             <input type="submit" value="Put Edited Outfit in My Closet" class="btn btn-outline-success"/>
         </form>
     
-        
+       </div> 
     </body>
 </html>

@@ -5,7 +5,7 @@
     </head>
     <body class="mx-auto" style="width: 200px;">
         <h1>Today's Selected Outfit</h1>
-        <div class="container">
+        <div class="container" >
             <nav>
                 <a href="/closet"><button class="btn btn-outline-primary">Back To My Closet</button></a>
             </nav>
@@ -13,11 +13,16 @@
             <a href="/closet/<%=closet._id%>">
                 <img src="<%=closet.image%>" height="200">
             </a>
-
-            <h2 class="col-sm">You chose:<br/><%= closet.type %> <br/> best for: <%= closet.season %> <br/> Last time you wore it your feels were a level:<br/> <%= closet.feels %> <br/> #tags: <%= closet.tags %></h2>
+        <div class="font">
+            <ul>
+                <li>You chose: <span class="answer"><%= closet.type %> </span></li>
+                <li> Best for: <span class="answer"><%= closet.season %></span> </li>
+                <li> Last time you wore it your feels were a level: <span class="answer"><%= closet.feels %></span> </li>
+                <li> #tags: <span class="answer"><%= closet.tags %></span></li>
+            </ul>
+            </div>
         </div>
             
-        </ul>
         <nav>
             <a href="/closet/<%= closet._id%>/edit">
                 <button class="btn btn-outline-warning">Edit your Outfit Here</button>

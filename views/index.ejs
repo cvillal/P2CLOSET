@@ -4,23 +4,27 @@
        <%- include ('./partials/head.ejs') %>
     </head>
     <body class="mx-auto" style="width: 200px;">
-      <div class="container-lg">
+      <div class="d-flex p-2 bd-highlight">
         <h1>My Closet!</h1>
         <form action="/closet" method="GET">
-            <input type="text" value="search" placeholder="search for outfit">
+            <input type="text" value="search by tag" placeholder="search for outfit">
+            
             <button class="btn btn-outline-success btn-sm">search</button>
         </form>
      
        <nav>
         <a href="/closet/new"><button id="addMore" class="btn btn-outline-success btn-sm">Add More Outfits To My Closet</button></a>
-        </nav>
+       
+        <a href="/closet"><button class="btn btn-outline-primary">Home</button></a>
+       </nav>
+
        </div>
        <ul>
         <% for(let i=0; i< closet.length; i++){ %>
-            <div id="card">
+            <div id="card" class="d-flex align-content-stretch flex-wrap flex-column flex-row">
             <li>
                 <a href="/closet/<%=closet[i]._id%>">
-                    <img src="<%=closet[i].image%>" height="200" ">
+                    <img src="<%=closet[i].image%>" height="200" >
                 </a>
             </li>
             <nav id="bottomButtons">

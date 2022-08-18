@@ -1,10 +1,24 @@
+body{
+    background-color: black;
+    
+}
 h1{
+    color: whitesmoke;
     border: 2px solid black;
-    text-align: center;
+    text-align:center;
     margin: 20%;
+   
+   
+    
 }
 .card{
    border: 5px solid red;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: row; 
+   align-content: stretch;
+
 }
 #addMore{
    margin: 2%;
@@ -19,6 +33,7 @@ h1{
 li{
     list-style: none;
     text-align: center;
+    margin: 3%;
 }
 
 #edit {
@@ -31,4 +46,17 @@ li{
 }
 #card{
     border: 2px solid black;
+}
+
+.font{
+    color: whitesmoke;
+    margin-left: -40%;
+    
+}
+.col-sm{
+    line-height: 2;
+    display: flex;
+}
+.answer{
+    color:gray;
 }

@@ -4,6 +4,7 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
+const { createIndexes } = require('./models/schema.js');
 const Closet = require('./models/schema.js');
 const { keys } = require('./models/starterPack.js');
 const closetSeed = require('./models/starterPack.js')
@@ -102,13 +103,26 @@ app.get('/closet/:id/edit', (req, res)=>{
 app.get('/closet/search/:tags', (req, res)=>{
     // const tags = req.params.tags;
     Closet.find({tags: req.params.tags},(err, findOutfit)=>{
+        
+        if(err){
+            res.render(
+                'index.ejs',
+                {
+                    tags: null,
+                })
+        console.log("tag not found - try again");
+
+        } else {
+            console.log(findOutfit)
         res.render(
             'index.ejs',
             {
                 closet: findOutfit
             }
         )
-        })
+        }
+    })
+
 })
   
 
